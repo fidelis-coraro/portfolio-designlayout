@@ -1,21 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-0evSXbVzTVFTlupQSGmmyRlziuVB/KTvQWSLUlwW9RHWN5Rl3xo1uUYLhgRCypcta" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+<title>Table</title>
 </head>
 <body>
-    <div class="container">
-        <div class="calculator-wrapper">
-            <input type="text" class="calculator-screen" id="display" readonly>
-            <div class="button-grid">
-                <button class="button c-button">C</button>
-                </div>
-        </div>
-    </div>
-    <script src="script.js"></script>
+<table border=2 width=40% align=center>
+
+<tr><th>Country<th>State<th>City<th>Street<th>Male<th>Female<th>Other</tr>
+
+<tr><td rowspan=8>1<td rowspan=4>Kerala<td rowspan=2>Cochin<td>New Street<td>500<td>608<td>6</tr>
+
+<tr><td>Main Street<td>300<td>288<td>2</tr>
+
+<tr><td rowspan=2> Trivandrum<td>Guru Street<td>500<td>600<td>10</tr>
+
+<tr><td>TVK Street<td>500<td>600<td>2</tr>
+
+<tr><td rowspan=4>Maharashtra<td rowspan=2>Mumbai<td>Krisha Street<td> 700<td>850<td>1</tr>
+
+<tr> <td>Main Street<td>500<td>600<td>2</tr>
+
+<tr><td rowspan=2>Surath<td>New Street<td>500<td>600<td>4</tr>
+
+<tr><td>Billa Street<td>500<td>600<td>2</tr>
+
+<tr><td rowspan=2>2<td rowspan=2>Alaska<td rowspan=2>AKA Central<td>New Street<td>200<td>218<td>2</tr>
+
+<td> Cross Street<td>1000<td>1050<td>10</tr>
+
+</table>
 </body>
 </html>
