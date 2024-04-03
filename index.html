@@ -4,131 +4,237 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer Satisfaction Survey</title>
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #010306;
+            font-family: Arial, sans-serif;
+        }
+
+        .survey-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .survey-container h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #007bff;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        textarea.form-control {
+            height: 100px;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            border: none;
+            color: #fbfafa;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .row {
+      display: flex;
+     flex-direction: row;
+     align-items: center;
+     }
+
+.rating {
+  display: inline-block;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  cursor: pointer;
+  font-size: 2em;
+  color: #ccc;
+}
+
+.rating input:checked ~ label {
+  color: #ffc107;
+}
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #7fb4f6;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="radio"] {
+            margin: 0;
+            padding: 0;
+            width: auto;
+            appearance: auto;
+            -webkit-appearance: radio;
+        }
+    </style>
 </head>
 <body>
     <div class="survey-container">
         <h1>Customer Satisfaction Survey</h1>
         <form id="survey-form">
-            <label for="name">Name:</label>
-            <input type="text" id="first-name" name="first-name" placeholder="First" required>
-            <input type="text" id="last-name" name="last-name" placeholder="Last" required><br><br>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <h2>Your Experience</h2>
-            <label for="experience">Overall, how would you rate your experience with us?</label>
-            <div class="rating-scale">
-                <input type="radio" id="exp-very-unsatisfied" name="experience" value="very_unsatisfied">
-                <label for="exp-very-unsatisfied">Very Unsatisfied</label>
-                <input type="radio" id="exp-unsatisfied" name="experience" value="unsatisfied">
-                <label for="exp-unsatisfied">Unsatisfied</label>
-                <input type="radio" id="exp-neutral" name="experience" value="neutral">
-                <label for="exp-neutral">Neutral</label>
-                <input type="radio" id="exp-satisfied" name="experience" value="satisfied">
-                <label for="exp-satisfied">Satisfied</label>
-                <input type="radio" id="exp-very-satisfied" name="experience" value="very_satisfied">
-                <label for="exp-very-satisfied">Very Satisfied</label>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="first-name">First Name:</label>
+                    <input type="text" id="first-name" name="first-name" class="form-control" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="last-name">Last Name:</label>
+                    <input type="text" id="last-name" name="last-name" class="form-control" required>
+                </div>
             </div>
 
-            <h2>How Satisfied Are You With...</h2>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+
+            <h2>Your Experience</h2>
+            <!-- Experience Rating -->
+            
+            <fieldset class="rating">
+                  <input type="radio" id="star1" name="rating" value="1" class="star-input">
+                  <label for="star1" class="star">&#9733;</label>
+                  <input type="radio" id="star2" name="rating" value="2" class="star-input">
+                  <label for="star2" class="star">&#9733;</label>
+                  <input type="radio" id="star3" name="rating" value="3" class="star-input">
+                  <label for="star3" class="star">&#9733;</label>
+                  <input type="radio" id="star4" name="rating" value="4" class="star-input">
+                  <label for="star4" class="star">&#9733;</label>
+                  <input type="radio" id="star5" name="rating" value="5" class="star-input">
+                  <label for="star5" class="star">&#9733;</label>
+            </fieldset>
+
+            <div class="form-group">
+                <label>Overall, how would you rate your experience with us?</label><br>
+                
+                <!-- Add other radio buttons for experience rating -->
+                <h2>How Satisfied Are You With...</h2>
             <div class="satisfaction-section">
-                <label for="purchase">Purchase</label>
-                <div class="rating-scale">
-                    <input type="radio" id="purchase-very-unsatisfied" name="purchase" value="very_unsatisfied">
-                    <label for="purchase-very-unsatisfied">Very Unsatisfied</label>
-                    <input type="radio" id="purchase-unsatisfied" name="purchase" value="unsatisfied">
-                    <label for="purchase-unsatisfied">Unsatisfied</label>
-                    <input type="radio" id="purchase-neutral" name="purchase" value="neutral">
-                    <label for="purchase-neutral">Neutral</label>
-                    <input type="radio" id="purchase-satisfied" name="purchase" value="satisfied">
-                    <label for="purchase-satisfied">Satisfied</label>
-                    <input type="radio" id="purchase-very-satisfied" name="purchase" value="very_satisfied">
-                    <label for="purchase-very-satisfied">Very Satisfied</label>
-                </div>
-
-                <label for="service">Service</label>
-                <div class="rating-scale">
-                    <input type="radio" id="service-very-unsatisfied" name="service" value="very_unsatisfied">
-                    <label for="service-very-unsatisfied">Very Unsatisfied</label>
-                    <input type="radio" id="service-unsatisfied" name="service" value="unsatisfied">
-                    <label for="service-unsatisfied">Unsatisfied</label>
-                    <input type="radio" id="service-neutral" name="service" value="neutral">
-                    <label for="service-neutral">Neutral</label>
-                    <input type="radio" id="service-satisfied" name="service" value="satisfied">
-                    <label for="service-satisfied">Satisfied</label>
-                    <input type="radio" id="service-very-satisfied" name="service" value="very_satisfied">
-                    <label for="service-very-satisfied">Very Satisfied</label>
-                </div>
-
-                <label for="company">Company Overall</label>
-                <div class="rating-scale">
-                    <input type="radio" id="company-very-unsatisfied" name="company" value="very_unsatisfied">
-                    <label for="company-very-unsatisfied">Very Unsatisfied</label>
-                    <input type="radio" id="company-unsatisfied" name="company" value="unsatisfied">
-                    <label for="company-unsatisfied">Unsatisfied</label>
-                    <input type="radio" id="company-neutral" name="company" value="neutral">
-                    <label for="company-neutral">Neutral</label>
-                    <input type="radio" id="company-satisfied" name="company" value="satisfied">
-                    <label for="company-satisfied">Satisfied</label>
-                    <input type="radio" id="company-very-satisfied" name="company" value="very_satisfied">
-                    <label for="company-very-satisfied">Very Satisfied</label>
+                <form>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Very Unsatisfied</th>
+                                <th>Unsatisfied</th>
+                                <th>Neutral</th>
+                                <th>Satisfied</th>
+                                <th>Very Satisfied</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Purchase</td>
+                                <td><input type="radio" name="Purchase" value="Very Unsatisfied"></td>
+                                <td><input type="radio" name="Purchase" value="Unsatisfied"></td>
+                                <td><input type="radio" name="Purchase" value="Neutral"></td>
+                                <td><input type="radio" name="Purchase" value="Satisfied"></td>
+                                <td><input type="radio" name="Purchase" value="Very Satisfied"></td>
+                            </tr>
+                            <tr>
+                                <td>Service</td>
+                                <td><input type="radio" name="Service" value="Very Unsatisfied"></td>
+                                <td><input type="radio" name="Service" value="Unsatisfied"></td>
+                                <td><input type="radio" name="Service" value="Neutral"></td>
+                                <td><input type="radio" name="Service" value="Satisfied"></td>
+                                <td><input type="radio" name="Service" value="Very Satisfied"></td>
+                            </tr>
+                            <tr>
+                                <td>Company Overall</td>
+                                <td><input type="radio" name="Company Overall" value="Very Unsatisfied"></td>
+                                <td><input type="radio" name="Company Overall" value="Unsatisfied"></td>
+                                <td><input type="radio" name="Company Overall" value="Neutral"></td>
+                                <td><input type="radio" name="Company Overall" value="Satisfied"></td>
+                                <td><input type="radio" name="Company Overall" value="Very Satisfied"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form><br>
 
                     <h2>How likely Are You to...</h2>
             <div class="satisfaction-section">
-                <label for="buy">buy from us again</label>
-                <div class="rating-scale">
-                    <input type="radio" id="buy-very-unlikely" name="buy" value="very-unlikely">
-                    <label for="buy-very-unlikely">very unlikely</label>
-                    <input type="radio" id="buy-unlikely" name="buy" value="unlikely">
-                    <label for="buy-unlikely">unlikely</label>
-                    <input type="radio" id="buy-neutral" name="buy" value="neutral">
-                    <label for="buy-neutral">Neutral</label>
-                    <input type="radio" id="buy-satisfied" name="buy" value="likely">
-                    <label for="buy-likely">likely</label>
-                    <input type="radio" id="buy-very-satisfied" name="buy" value="very_likely">
-                    <label for="buy-very-likely">very-likely</label>
-                </div>
+                <form>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Very Unlikely</th>
+                                <th>Unlikely</th>
+                                <th>Neutral</th>
+                                <th>likely</th>
+                                <th>Very likely</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>buy from us again</td>
+                                <td><input type="radio" name="Purchase" value="Very Unsatisfied"></td>
+                                <td><input type="radio" name="Purchase" value="Unsatisfied"></td>
+                                <td><input type="radio" name="Purchase" value="Neutral"></td>
+                                <td><input type="radio" name="Purchase" value="Satisfied"></td>
+                                <td><input type="radio" name="Purchase" value="Very Satisfied"></td>
+                            </tr>
+                            <tr>
+                                <td>Recommand our product to others</td>
+                                <td><input type="radio" name="Service" value="Very Unsatisfied"></td>
+                                <td><input type="radio" name="Service" value="Unsatisfied"></td>
+                                <td><input type="radio" name="Service" value="Neutral"></td>
+                                <td><input type="radio" name="Service" value="Satisfied"></td>
+                                <td><input type="radio" name="Service" value="Very Satisfied"></td>
+                            </tr>
+                            <tr>
+                                <td>Recommand our company to others</td>
+                                <td><input type="radio" name="Company Overall" value="Very Unsatisfied"></td>
+                                <td><input type="radio" name="Company Overall" value="Unsatisfied"></td>
+                                <td><input type="radio" name="Company Overall" value="Neutral"></td>
+                                <td><input type="radio" name="Company Overall" value="Satisfied"></td>
+                                <td><input type="radio" name="Company Overall" value="Very Satisfied"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form><br>
 
-                <label for="Recommand">Recommand our product to others</label>
-                <div class="rating-scale">
-                    <input type="radio" id="Recommand-very-unlikely" name="Recommand" value="very-unlikely">
-                    <label for="Recommand-very-unlikely">very unlikely</label>
-                    <input type="radio" id="buy-unlikely" name="Recommand" value="unlikely">
-                    <label for="Recommand-unlikely">unlikely</label>
-                    <input type="radio" id="buy-neutral" name="Recommand" value="neutral">
-                    <label for="Recommand-neutral">Neutral</label>
-                    <input type="radio" id="buy-satisfied" name="Recommand" value="likely">
-                    <label for="Recommand-likely">likely</label>
-                    <input type="radio" id="buy-very-satisfied" name="Recommand" value="very_likely">
-                    <label for="Recommand-very-likely">very-likely</label>
-                </div>
+            <div class="form-group">
+                <label for="comments">Additional comments or suggestions:</label>
+                <textarea id="comments" name="comments" class="form-control"></textarea>
+            </div>
 
-                <label for="Recommand">Recommand our company to others</label>
-                <div class="rating-scale">
-                    <input type="radio" id="Recommand-very-unlikely" name="Recommand" value="very-unlikely">
-                    <label for="Recommand-very-unlikely">very unlikely</label>
-                    <input type="radio" id="buy-unlikely" name="Recommand" value="unlikely">
-                    <label for="Recommand-unlikely">unlikely</label>
-                    <input type="radio" id="buy-neutral" name="Recommand" value="neutral">
-                    <label for="Recommand-neutral">Neutral</label>
-                    <input type="radio" id="buy-satisfied" name="Recommand" value="likely">
-                    <label for="Recommand-likely">likely</label>
-                    <input type="radio" id="buy-very-satisfied" name="Recommand" value="very_likely">
-                    <label for="Recommand-very-likely">very-likely</label>
-                </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
 
-                <div class="form-group">
-                    <label for="comments">Additional comments or suggestions:</label>
-                    <textarea id="comments" name="comments" class="form-control"></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-  </div>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
