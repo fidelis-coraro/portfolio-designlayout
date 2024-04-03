@@ -1,34 +1,134 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head>
-<title>Table</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Satisfaction Survey</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<table border=2 width=40% align=center>
+    <div class="survey-container">
+        <h1>Customer Satisfaction Survey</h1>
+        <form id="survey-form">
+            <label for="name">Name:</label>
+            <input type="text" id="first-name" name="first-name" placeholder="First" required>
+            <input type="text" id="last-name" name="last-name" placeholder="Last" required><br><br>
 
-<tr><th>Country<th>State<th>City<th>Street<th>Male<th>Female<th>Other</tr>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
-<tr><td rowspan=8>1<td rowspan=4>Kerala<td rowspan=2>Cochin<td>New Street<td>500<td>608<td>6</tr>
+            <h2>Your Experience</h2>
+            <label for="experience">Overall, how would you rate your experience with us?</label>
+            <div class="rating-scale">
+                <input type="radio" id="exp-very-unsatisfied" name="experience" value="very_unsatisfied">
+                <label for="exp-very-unsatisfied">Very Unsatisfied</label>
+                <input type="radio" id="exp-unsatisfied" name="experience" value="unsatisfied">
+                <label for="exp-unsatisfied">Unsatisfied</label>
+                <input type="radio" id="exp-neutral" name="experience" value="neutral">
+                <label for="exp-neutral">Neutral</label>
+                <input type="radio" id="exp-satisfied" name="experience" value="satisfied">
+                <label for="exp-satisfied">Satisfied</label>
+                <input type="radio" id="exp-very-satisfied" name="experience" value="very_satisfied">
+                <label for="exp-very-satisfied">Very Satisfied</label>
+            </div>
 
-<tr><td>Main Street<td>300<td>288<td>2</tr>
+            <h2>How Satisfied Are You With...</h2>
+            <div class="satisfaction-section">
+                <label for="purchase">Purchase</label>
+                <div class="rating-scale">
+                    <input type="radio" id="purchase-very-unsatisfied" name="purchase" value="very_unsatisfied">
+                    <label for="purchase-very-unsatisfied">Very Unsatisfied</label>
+                    <input type="radio" id="purchase-unsatisfied" name="purchase" value="unsatisfied">
+                    <label for="purchase-unsatisfied">Unsatisfied</label>
+                    <input type="radio" id="purchase-neutral" name="purchase" value="neutral">
+                    <label for="purchase-neutral">Neutral</label>
+                    <input type="radio" id="purchase-satisfied" name="purchase" value="satisfied">
+                    <label for="purchase-satisfied">Satisfied</label>
+                    <input type="radio" id="purchase-very-satisfied" name="purchase" value="very_satisfied">
+                    <label for="purchase-very-satisfied">Very Satisfied</label>
+                </div>
 
-<tr><td rowspan=2> Trivandrum<td>Guru Street<td>500<td>600<td>10</tr>
+                <label for="service">Service</label>
+                <div class="rating-scale">
+                    <input type="radio" id="service-very-unsatisfied" name="service" value="very_unsatisfied">
+                    <label for="service-very-unsatisfied">Very Unsatisfied</label>
+                    <input type="radio" id="service-unsatisfied" name="service" value="unsatisfied">
+                    <label for="service-unsatisfied">Unsatisfied</label>
+                    <input type="radio" id="service-neutral" name="service" value="neutral">
+                    <label for="service-neutral">Neutral</label>
+                    <input type="radio" id="service-satisfied" name="service" value="satisfied">
+                    <label for="service-satisfied">Satisfied</label>
+                    <input type="radio" id="service-very-satisfied" name="service" value="very_satisfied">
+                    <label for="service-very-satisfied">Very Satisfied</label>
+                </div>
 
-<tr><td>TVK Street<td>500<td>600<td>2</tr>
+                <label for="company">Company Overall</label>
+                <div class="rating-scale">
+                    <input type="radio" id="company-very-unsatisfied" name="company" value="very_unsatisfied">
+                    <label for="company-very-unsatisfied">Very Unsatisfied</label>
+                    <input type="radio" id="company-unsatisfied" name="company" value="unsatisfied">
+                    <label for="company-unsatisfied">Unsatisfied</label>
+                    <input type="radio" id="company-neutral" name="company" value="neutral">
+                    <label for="company-neutral">Neutral</label>
+                    <input type="radio" id="company-satisfied" name="company" value="satisfied">
+                    <label for="company-satisfied">Satisfied</label>
+                    <input type="radio" id="company-very-satisfied" name="company" value="very_satisfied">
+                    <label for="company-very-satisfied">Very Satisfied</label>
 
-<tr><td rowspan=4>Maharashtra<td rowspan=2>Mumbai<td>Krisha Street<td> 700<td>850<td>1</tr>
+                    <h2>How likely Are You to...</h2>
+            <div class="satisfaction-section">
+                <label for="buy">buy from us again</label>
+                <div class="rating-scale">
+                    <input type="radio" id="buy-very-unlikely" name="buy" value="very-unlikely">
+                    <label for="buy-very-unlikely">very unlikely</label>
+                    <input type="radio" id="buy-unlikely" name="buy" value="unlikely">
+                    <label for="buy-unlikely">unlikely</label>
+                    <input type="radio" id="buy-neutral" name="buy" value="neutral">
+                    <label for="buy-neutral">Neutral</label>
+                    <input type="radio" id="buy-satisfied" name="buy" value="likely">
+                    <label for="buy-likely">likely</label>
+                    <input type="radio" id="buy-very-satisfied" name="buy" value="very_likely">
+                    <label for="buy-very-likely">very-likely</label>
+                </div>
 
-<tr> <td>Main Street<td>500<td>600<td>2</tr>
+                <label for="Recommand">Recommand our product to others</label>
+                <div class="rating-scale">
+                    <input type="radio" id="Recommand-very-unlikely" name="Recommand" value="very-unlikely">
+                    <label for="Recommand-very-unlikely">very unlikely</label>
+                    <input type="radio" id="buy-unlikely" name="Recommand" value="unlikely">
+                    <label for="Recommand-unlikely">unlikely</label>
+                    <input type="radio" id="buy-neutral" name="Recommand" value="neutral">
+                    <label for="Recommand-neutral">Neutral</label>
+                    <input type="radio" id="buy-satisfied" name="Recommand" value="likely">
+                    <label for="Recommand-likely">likely</label>
+                    <input type="radio" id="buy-very-satisfied" name="Recommand" value="very_likely">
+                    <label for="Recommand-very-likely">very-likely</label>
+                </div>
 
-<tr><td rowspan=2>Surath<td>New Street<td>500<td>600<td>4</tr>
+                <label for="Recommand">Recommand our company to others</label>
+                <div class="rating-scale">
+                    <input type="radio" id="Recommand-very-unlikely" name="Recommand" value="very-unlikely">
+                    <label for="Recommand-very-unlikely">very unlikely</label>
+                    <input type="radio" id="buy-unlikely" name="Recommand" value="unlikely">
+                    <label for="Recommand-unlikely">unlikely</label>
+                    <input type="radio" id="buy-neutral" name="Recommand" value="neutral">
+                    <label for="Recommand-neutral">Neutral</label>
+                    <input type="radio" id="buy-satisfied" name="Recommand" value="likely">
+                    <label for="Recommand-likely">likely</label>
+                    <input type="radio" id="buy-very-satisfied" name="Recommand" value="very_likely">
+                    <label for="Recommand-very-likely">very-likely</label>
+                </div>
 
-<tr><td>Billa Street<td>500<td>600<td>2</tr>
+                <div class="form-group">
+                    <label for="comments">Additional comments or suggestions:</label>
+                    <textarea id="comments" name="comments" class="form-control"></textarea>
+                </div>
 
-<tr><td rowspan=2>2<td rowspan=2>Alaska<td rowspan=2>AKA Central<td>New Street<td>200<td>218<td>2</tr>
-
-<td> Cross Street<td>1000<td>1050<td>10</tr>
-
-</table>
-</body>
+                <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
